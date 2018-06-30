@@ -1,0 +1,32 @@
+﻿@model TechShopping.Models.ProductsListViewModel
+
+@{
+    ViewBag.Title = "List";
+}
+
+@if (Model.Products.Count() > 0)
+{
+
+    foreach (var p in Model.Products)
+    {
+        @Html.Partial("_ProductListPartial", p)
+    }
+
+    <div>
+        @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new
+   {
+       page =
+         x
+   }))
+    </div>
+}
+else
+{
+    <h2>Sorry our stocks are empty</h2>
+}
+
+
+
+
+
+

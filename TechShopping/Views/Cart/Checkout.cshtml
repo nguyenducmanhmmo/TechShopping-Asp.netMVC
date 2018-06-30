@@ -1,0 +1,40 @@
+﻿@model TechShopping.Models.Order
+@{
+    /**/
+
+    ViewBag.Title = "Checkout";
+}
+
+<h2>Check out now</h2>
+<p>Please enter your details, and we'll ship your goods right away!</p>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <h3>Ship to</h3>
+    <div class="form-group">
+        <label>Your Name:</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    </div>
+    <h3>Your Adress</h3>
+    <div class="form-group">
+        <label>Adress</label>
+        @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+    </div>
+    <h3>Your City</h3>
+    <div class="form-group">
+        <label>City</label>
+        @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+    </div>
+    <h3>Your PhoneNumber</h3>
+    <div class="form-group">
+        <label>Phone Number</label>
+        @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+    </div>
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Complete Your order" />
+    </div>
+
+
+}
+
+
